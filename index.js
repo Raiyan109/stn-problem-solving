@@ -42,17 +42,36 @@ const books = [
         year: 1818
     },
 ]
-
 const bookTitles = (books) => {
     const onlyTitles = books.map((book) => book.title)
     return onlyTitles
 }
-
 const bookTitleResult = bookTitles(books)
 console.log(bookTitleResult)
 
+// 3. Function Composition: Write three functions: one to square a number, one to double a number, and one to add 5 to a number. Compose these functions to create a new function that squares a number, doubles the result, and then adds 5.
 
+function squareNum(num) {
+    return num ** 2
+}
 
+function doubleNum(num) {
+    return num * 2
+}
+
+function addFive(num) {
+    return num + 5
+}
+
+function functionComposition(function1, function2, function3) {
+    return function (x) {
+        return function3(function2(function1(x)))
+    }
+}
+
+const squareThenDoubleThenAddFive = functionComposition(squareNum, doubleNum, addFive);
+
+console.log(squareThenDoubleThenAddFive(5))
 
 
 
