@@ -93,12 +93,44 @@ const cars = [
         year: 1818
     },
 ]
-
 function sortCars(cars) {
     const sortedCars = cars.sort((a, b) => a.year - b.year)
     return sortedCars
 }
-
 console.log(sortCars(cars))
 
 
+
+
+// 5. Find and Modify: Write a function that searches an array of objects for a specific person by name. If found, modify their age property. Print the updated array.
+const person = [
+    {
+        name: 'raiyan',
+        age: 29,
+    },
+    {
+        name: 'sabiha',
+        age: 18,
+    },
+    {
+        name: 'rajib',
+        age: 13,
+    },
+]
+
+function searchAndModify(peopleArray, personName, newAge) {
+    const person = peopleArray.find(p => p.name === personName);
+    console.log(person)
+
+    // If the person is found, update the age
+    if (person) {
+        person.age = newAge;
+    } else {
+        console.log(`Person with name ${personName} not found.`);
+    }
+
+    // Print the updated array
+    console.log(peopleArray);
+}
+
+searchAndModify(person, "raiyan", 30)
