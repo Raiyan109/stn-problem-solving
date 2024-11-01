@@ -24,5 +24,39 @@ const onlyNames = onlyFemales.map((n) => n.name)
 console.log(onlyNames)
 
 
+// 2. Object Manipulation: Create an array of objects representing books with properties like title, author, and year. Write a function that takes the array and returns a new array with only the book titles. Print the result.
+const books = [
+    {
+        title: 'Treasure Island',
+        author: 'Robert Louis',
+        year: 1883
+    },
+    {
+        title: 'Inferno',
+        author: 'Dan Brown',
+        year: 2013
+    },
+    {
+        title: 'Frankenstein',
+        author: 'Mary Shelley',
+        year: 1818
+    },
+]
+
+const bookTitles = (books) => {
+    const onlyTitles = books.map((book) => book.title)
+    return onlyTitles
+}
+
+const bookTitleResult = bookTitles(books)
+console.log(bookTitleResult)
+
+
+
+
+
+
+
+
 
 
